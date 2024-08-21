@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <audio id="click-audio" src="./images/mouse-click.mp3"></audio>
+    <audio id="game-over-audio" src="./images/game-over.mp3"></audio>
+    <audio id="game-start-audio" src="./images/start-game.mp3"></audio>
+    <audio id="eating-audio" src="./images/eating.mp3"></audio>
+
+    <div id="loader-wrapper">
+        <img src="./images/T Xerse Play Studios 3.png" id="logo">
+        <div id="loader"></div>
+    </div>
+
+    <div class="welcome-note">
+      <h1>Welcome to Snake Frenzy</h1>
+      <p>click Play button to Start Game</p>
+      <button class="start-play">Play Game <i class="fa-solid fa-play fa-beat"></i></button>
+    </div>
+
+    <div class="alert" id="game-over-box">
+      <h1>Game Over <i class="fa-solid fa-skull fa-shake"></i></h1>
+      <div class="icon">
+        <i class="fa-solid fa-trophy fa-beat"></i>
+        <p id="score-display">Your Score:</p>
+      </div>
+      <div class="icon">
+        <i class="fa-solid fa-trophy fa-beat" style="color: #FFD43B;"></i></i>
+        <p id="high-score-display">High Score:</p>
+      </div>
+      <button class="new-game">New Game <i class="fa-solid fa-play fa-beat"></i></button>
+    </div>
+
+
+    <div class="game-mode" id="game-mode">
+      <h1>Game Mode<i class="fa-solid fa-angles-right fa-fade"></i></h1>
+      <button class="hard-mode">Serpent's Fury <i class="fa-solid fa-angle-right fa-beat"></i></button>
+      <button class="medium-mode">Balanced Bite <i class="fa-solid fa-angle-right fa-beat"></i></button>
+      <button class="easy-mode">Relaxed Reptile <i class="fa-solid fa-angle-right fa-beat"></i></button>
+    </div>
+
+
+    <div  id="content">
+        <div class="wrapper">
+            <div class="game-detail">
+              <span class="score">Score: 0</span>
+              <span class="game-mode-btn">Select Mode <i class="fa-solid fa-location-arrow fa-fade"></i></span>
+              <span class="high-Score">High Score: 0</span>
+            </div>
+            <div class="play-board"></div>
+            <div class="controler">
+              <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+              <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+              <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+              <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+            </div>
+          </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

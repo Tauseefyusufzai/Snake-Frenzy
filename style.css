@@ -1,0 +1,334 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: monospace;
+    background-color: rgb(183, 221, 249);
+}
+.welcome-note{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 60vmin;
+    width: 70vmin;
+    background-color: rgb(2, 21, 38);
+    color: rgb(226, 226, 182);
+    border-radius: 5px;
+}
+.welcome-note h1{
+    padding: 20px 0 20px 0;
+    font-size: 5vmin;
+}
+.welcome-note p{
+    padding: 20px 0 20px 0;
+    font-size: 3vmin;
+}
+.welcome-note button{
+    width: 30vmin;
+    margin-top: 50px;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(110, 172, 218);
+    color: rgb(3, 52, 110);
+    transition: 0.3s;
+}
+
+.welcome-note button:hover{
+    display: block;
+    filter: drop-shadow(0 0 10px rgb(226, 226, 182));
+    background-color: rgb(226, 226, 182);
+    transition: 0.3s;
+
+}
+
+/* alert box for game over */
+.alert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 80vmin;
+    width: 70vmin;
+    background-color: rgb(2, 21, 38);
+    color: rgb(226, 226, 182);
+    border-radius: 5px;
+}
+
+.alert h1{
+    border-radius: 50px;
+    border: 3px dashed rgb(226, 226, 182);
+    padding: 20px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.alert p{
+    font-size: 1.5rem;
+    padding: 20px 0 20px 0;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon i {
+    font-size: 1.5rem;
+}
+
+.alert button{
+    width: 30vmin;
+    margin-top: 50px;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(110, 172, 218);
+    color: rgb(3, 52, 110);
+    transition: 0.3s;
+}
+
+.alert button:hover{
+    display: block;
+    filter: drop-shadow(0 0 10px rgb(226, 226, 182));
+    background-color: rgb(226, 226, 182);
+    transition: 0.3s;
+
+}
+#game-over-box{
+    display: none;
+}
+
+/* game mode....... */
+.game-mode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    height: 80vmin;
+    width: 70vmin;
+    background-color: rgb(2, 21, 38);
+    color: rgb(226, 226, 182);
+    border-radius: 5px;
+}
+.game-mode h1{
+    border-radius: 50px;
+    border: 3px dashed rgb(226, 226, 182);
+    padding: 20px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.game-mode button{
+    width: 30vmin;
+    margin-top: 50px;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(110, 172, 218);
+    color: rgb(3, 52, 110);
+    transition: 0.3s;
+}
+
+.game-mode button:hover{
+    display: block;
+    filter: drop-shadow(0 0 10px rgb(226, 226, 182));
+    background-color: rgb(226, 226, 182);
+    transition: 0.3s;
+
+}
+#game-mode{
+    display: none;
+}
+
+
+
+
+/* loading screen */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#loader {
+    width: 20%;
+    height: 22px;
+    border-radius: 10px;
+    color: #3498db;
+    border: 2px solid;
+    position: relative;
+}
+#loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: l6 2s infinite;
+}
+
+@keyframes l6 {
+      100% {inset:0}
+}
+
+
+#logo{
+    width: 50%;
+}
+
+#content {
+    display: none;
+}
+
+/* game content............. */
+.wrapper{
+    height: 80vmin;
+    width: 70vmin;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgb(2, 21, 38);
+    border-radius: 5px;
+}
+
+.game-detail{
+    font-size: 1.3rem;
+    color: rgb(226, 226, 182);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.game-mode-btn{
+    cursor: pointer;
+    color: rgb(110, 172, 218);
+}
+
+.play-board{
+    width: 100%;
+    height: 100%;
+    background: rgb(1, 11, 20);
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-board .food{
+    background: rgb(110, 172, 218);
+}
+.play-board .head{
+    transition: 0.3s;
+    background: rgb(3, 52, 110);
+    animation: s1 0.3s timing-function delay iteration-count direction fill-mode;
+    
+}
+
+.controler{
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+.controler i{
+    color: rgb(226, 226, 182);
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px 0;
+    width: calc(100% / 4);
+    border-right: 1px solid black;
+}
+
+@media screen and (max-width: 1000px) {
+    .controler{
+        display: flex;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper{
+        height: 120vmin;
+        width: 90vmin;
+    }
+
+    .game-detail{
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    .controler i{
+        font-size: 1rem;
+        padding: 15px 0;
+
+    }
+    .alert{
+        height: 120vmin;
+        width: 90vmin;
+    }
+    .alert h1{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .alert p{
+        font-size: 1.2rem;
+    }
+    .icon i {
+        font-size: 1.2rem;
+    }
+    .alert button{
+        width: 40vmin;
+    }
+
+    .game-mode{
+        height: 120vmin;
+        width: 90vmin;
+    }
+    .game-mode h1{
+        font-size: 2.5rem;
+    }
+    .game-mode button{
+        width: 40vmin;
+        font-size: 1rem;
+        padding: 10px;
+        margin-top: 40px;
+    }
+    .welcome-note{
+        height: 100vmin;
+        width: 90vmin;
+    }
+    .welcome-note button{
+        width: 40vmin;
+        font-size: 1rem;
+    }
+}
